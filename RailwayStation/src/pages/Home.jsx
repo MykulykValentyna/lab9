@@ -19,14 +19,18 @@ export const Home = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Розклад потягів</h2>
-      <input 
-        type="text" 
-        className={styles.searchInput}
-        placeholder="Пошук за маршрутом або номером..." 
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+      <h2 className={styles.title}>Розклад рейсів</h2>
+      
+      <div className={styles.searchContainer}>
+        <input 
+          type="text" 
+          className={styles.searchInput}
+          placeholder="Куди плануєте подорож? Введіть маршрут або номер..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
       <TrainList trains={filteredTrains} />
     </div>
   )
