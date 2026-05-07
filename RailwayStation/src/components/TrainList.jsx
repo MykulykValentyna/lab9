@@ -1,10 +1,11 @@
 import { TrainCard } from './TrainCard'
 
-export const TrainList = () => {
+export const TrainList = ({ trains }) => {
   return (
     <div>
-      <TrainCard />
-      <TrainCard />
+      {trains.map(train => (
+        <TrainCard key={train.id} train={train} />
+      ))}
     </div>
   )
 }
